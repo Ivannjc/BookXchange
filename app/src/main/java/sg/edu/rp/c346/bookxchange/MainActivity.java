@@ -1,5 +1,6 @@
 package sg.edu.rp.c346.bookxchange;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,6 +13,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,11 +28,33 @@ public class MainActivity extends AppCompatActivity
     private TextView tvEmailDisplay;
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
+    private EditText etTitle,etAuthor,etGenre,etDesc,etContact,etPOC;
+    private ImageView img;
+    private Button btnAddBook;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        etTitle = (EditText)findViewById(R.id.etTitle);
+        etAuthor = (EditText)findViewById(R.id.etAuthor);
+        etGenre = (EditText)findViewById(R.id.etGenre);
+        etDesc = (EditText)findViewById(R.id.etDesc);
+        etContact = (EditText)findViewById(R.id.etContact);
+        etPOC = (EditText)findViewById(R.id.etPOC);
+        img = (ImageView)findViewById(R.id.imageView2);
+        btnAddBook = (Button)findViewById(R.id.btnAddBook);
+
+        btnAddBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent AddIntent = new Intent(MainActivity.this,MyBookActivity.class);
+                startActivity(AddIntent);
+            }
+        });
+
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -94,17 +120,15 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_mybook) {
+            Intent myBookIntent = new Intent(MainActivity.this,MyBookActivity.class);
+        } else if (id == R.id.nav_search) {
+            Intent searchBookIntent = new Intent(MainActivity.this, SearchBookActivity.class);
+            startActivity(searchBookIntent);
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_addbook) {
+            Intent addBookIntent = new Intent(MainActivity.this, MainActivity.class);
+            startActivity(addBookIntent);
 
         }
 
