@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "138752183470",
+    "firebase_url": "https://fir-registrationlogin-49704.firebaseio.com",
+    "project_id": "fir-registrationlogin-49704",
+    "storage_bucket": "fir-registrationlogin-49704.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:138752183470:android:ce65a77e6b2777bc",
+        "android_client_info": {
+          "package_name": "sg.edu.rp.c346.bookxchange"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "138752183470-fa6t2fpa0uqj6tscbfm449p3dlhomhli.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAOzIzrUNpLzWkiNhW7FDJAAR5Cyve2rY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
